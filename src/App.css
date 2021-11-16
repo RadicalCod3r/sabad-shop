@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: 'iran_sans';
+  src: url('/src/fonts/IRANSansWeb(FaNum).eot') format('embedded-opentype'),
+      url('/src/fonts/IRANSansWeb(FaNum).ttf') format('truetype'),
+      url('/src/fonts/IRANSansWeb(FaNum).woff') format('woff'),
+      url('/src/fonts/IRANSansWeb(FaNum).woff2') format('woff2');
+}
