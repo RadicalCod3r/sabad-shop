@@ -1,0 +1,24 @@
+.general-radio {
+    -webkit-appearance: none;
+}
+
+.general-label {
+    font-size: .9rem;
+    color: #3B668D;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 5px 7px; 
+    cursor: pointer;
+}
+
+.general-radio:checked + .general-label {
+    background-color: #F8D240;
+}
+
+.brand-checkbox {
+    width: 20px;
+    height: 20px;
+    color: #3B668D;
+    margin: 0 .5rem;
+}

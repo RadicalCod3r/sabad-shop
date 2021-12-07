@@ -8,12 +8,17 @@ import {
     CustomLink
 } from './HomePage.styles';
 import PrimaryButtonLarge from '../../components/buttons/primary-button/PrimaryButtonLarge.styles';
-import { PersentageContainerLarge } from '../../components/persentage-container/PersentageContainer.styles';
 import ProductBoxLarge from '../../components/product-box/ProductBoxLarge.component';
 
-import products from '../../data/products';
 import { connect } from 'react-redux';
 import { setIsShopping } from '../../redux/shop/shop.action';
+import { fetchProductsStart } from '../../redux/shop/shop.action';
+import Loader from '../../components/Loader/Loader.component';
+import {
+    selectIsProductsLoading,
+    selectProducts    
+} from '../../redux/shop/shop.selectors';
+import { createStructuredSelector } from 'reselect';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -27,23 +32,33 @@ class HomePage extends React.Component {
     }
     
     render() {
+        const { products, isLoading } = this.props;
+        console.log(isLoading);
         return(
-            <HomePageContainer>
-                <HomePageBackground src='https://s4.uupload.ir/files/pexels-shvets-production-7195232_w6s5.jpg'/>
-                <ContentContainer>
-                    <TextContent>تا <PersentageContainerLarge>٪60</PersentageContainerLarge> تخفیف در چهارشنبه های <HighlightText>شصت درصدی</HighlightText></TextContent>
-                    <PrimaryButtonLarge>
-                        <CustomLink to='/shop'>شروع</CustomLink>
-                    </PrimaryButtonLarge>
-                </ContentContainer>
-                <ProductBoxLarge product={products[Math.floor(Math.random() * 57)]} boxTitle="پیشنهاد سبد" />
-            </HomePageContainer>
+            // <Loader isLoading={isLoading}>
+                <HomePageContainer>
+                    <HomePageBackground src='https://s4.uupload.ir/files/pexels-shvets-production-7195232_w6s5.jpg'/>
+                    <ContentContainer>
+                        <TextContent>تخفیف های شگفت انگیز در <HighlightText>چهارشنبه های شگفت انگیز</HighlightText></TextContent>
+                        <PrimaryButtonLarge>
+                            <CustomLink to='/shop'>شروع</CustomLink>
+                        </PrimaryButtonLarge>
+                    </ContentContainer>
+                    <ProductBoxLarge product={products[Math.floor(Math.random() * 57)]} boxTitle="پیشنهاد سبد" />
+                </HomePageContainer>
+            /* </Loader> */
         );
     }
 }
 
 const mapDispatchToProps = dispatch => ({
-    toggleShoppingMode: (isShopping) => dispatch(setIsShopping(isShopping))
+    toggleShoppingMode: (isShopping) => dispatch(setIsShopping(isShopping)),
+    startFetchingProducts: () => dispatch(fetchProductsStart())
+});
+
+const mapStateToProps = createStructuredSelector({
+    products: selectProducts,
+    isLoading: selectIsProductsLoading
 })
 
-export default connect(null, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

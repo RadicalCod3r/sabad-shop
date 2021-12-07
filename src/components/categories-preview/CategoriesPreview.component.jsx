@@ -1,5 +1,5 @@
 import React from 'react';
-import categories from '../../data/categories';
+import products from '../../data/products';
 import {
     CategoriesPreviewContainer,
     TitleText,
@@ -7,12 +7,14 @@ import {
 } from './CategoriesPreview.styles';
 import CategoryItem from '../category-item/CategoryItem.component';
 
-const CategoriesPreview = () => (
+const CategoriesPreview = ({ items }) => (
     <CategoriesPreviewContainer>
         <TitleText>دسته بندی کالا ها</TitleText>
         <CategoryItemsContainer>
-            {categories.map((item) => (
-                <CategoryItem key={item.id} item={item} />
+            {items.map((item) => (
+                <CategoryItem
+                    key={item.id} 
+                    item={item} />
             ))}
         </CategoryItemsContainer>
     </CategoriesPreviewContainer>

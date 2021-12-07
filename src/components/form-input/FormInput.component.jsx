@@ -3,16 +3,29 @@ import {
     FormInputContainer,
     Line,
     Input,
-    LogoContainer
+    LogoContainer,
+    LogoText,
+    TextContainer
 } from './FormInput.styles';
 
-const FormInput = ({ placeholder, type, iconName }) => (
-    <FormInputContainer>
-        <LogoContainer>
-            <i className={`fas fa-${iconName}`}></i>
-        </LogoContainer>
+const FormInput = ({ placeholder, name, type, value, iconName, logoText, onInputChanged, reversed }) => (
+    <FormInputContainer reversed={reversed}>
+        {logoText ? (
+            <TextContainer>
+                <LogoText>{logoText}</LogoText>
+            </TextContainer>
+        ) : (
+            <LogoContainer>
+                <i className={`fas fa-${iconName}`}></i>
+            </LogoContainer>
+        )}
         <Line />
-        <Input type={type} placeholder={placeholder} />
+        <Input 
+            type={type} 
+            name={name} 
+            placeholder={placeholder}
+            value={value}
+            onChange={onInputChanged} />
     </FormInputContainer>
 );
 

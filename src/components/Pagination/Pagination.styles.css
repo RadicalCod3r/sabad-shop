@@ -1,0 +1,65 @@
+.page-btn {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    background-color: #fff;
+    border-radius: 50px;
+    border: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.page-btn a {
+    font-size: 1rem;
+    color: #3B668D;
+    background-color: #F4F4F4;
+    width: 40px;
+    height: 40px;
+    padding: .5rem;
+    border-radius: 50%;
+    border: none;
+    margin: 0 .4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.page-btn a:hover {
+    background-color: #f7e8ae;
+}
+
+.active-btn a {
+    background-color: #F8D240;
+}
+
+.previous-btn a, 
+.next-btn a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+    border: #3B668D 1px solid;
+    width: 50px;
+}
+
+.previous-btn {
+    margin-left: 1rem;
+}
+
+.next-btn {
+    margin-right: 1rem;
+}
+
+.previous-btn a:hover,
+.next-btn a:hover {
+    background-color: #F4F4F4;
+}

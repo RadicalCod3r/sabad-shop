@@ -6,8 +6,8 @@ import {
     Title
 } from './GoogleSignInBtn.styles';
 
-const GoogleSignInBtn = () => (
-    <ButtonContainer>
+const GoogleSignInBtn = ({ onClick }) => (
+    <ButtonContainer onClick={onClick}>
         <GoogleIcon>
             <i className="fab fa-google"></i>
         </GoogleIcon>

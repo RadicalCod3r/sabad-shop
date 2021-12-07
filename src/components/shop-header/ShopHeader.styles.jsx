@@ -29,8 +29,9 @@ export const SearchBar = styled.div`
     border: none;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: right;
-    padding: .3rem 1rem;
+    padding: .3rem .2rem;
     margin: 0 2rem;
 `;
 
@@ -64,3 +65,17 @@ export const HeaderLogo = styled.img`
 export const SearchIcon = styled.div`
     margin-left: 10px;
 `;
+
+export const CartNumber = styled.div`
+    background-color: #F8D240;
+    border-radius: 50%;
+    border: none;
+    color: ##3B668D;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: iran_sans, 'Segoe UI', Tahoma, sans-serif;
+`

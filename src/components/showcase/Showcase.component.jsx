@@ -23,7 +23,7 @@ const Showcase = ({ id, items, title, url, backgroundColor }) => (
         </ShowcaseTitre>
         <ProductSlider id={id} items={items}>
             {items.map((item) => (
-                <Thumbnail>
+                <Thumbnail key={item.id}>
                     <ProductBoxMedium key={item.id} product={item} />
                 </Thumbnail>
             ))}

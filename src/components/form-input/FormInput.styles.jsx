@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const FormInputContainer = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: ${props => props.reversed ? 'row-reverse' : 'row'};
     margin: .5rem 0;
     background-color: #F4F4F4;
     height: 40px;
@@ -41,3 +41,15 @@ export const Input = styled.input`
     background-color: #f4f4f4;
     font-family: iran_sans, 'Segoe UI', Tahoma, sans-serif;
 `;
+
+export const LogoText = styled.p`
+    font-size: 1rem;
+    color: #3B668D;
+`;
+
+export const TextContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    padding: 0 .5rem;
+    align-items: center;
+`
